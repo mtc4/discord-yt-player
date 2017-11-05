@@ -26,6 +26,21 @@ const DM = require('discord-yt-player')
 ```
 
 ### Setup
+
+First of all you need to create a Discord client object e.g.
+
+```
+const client = new Discord.Client({
+    autoReconnect: true, 
+    max_message_cache: 0
+});
+```
+Next up create a bot object based on the client
+```
+const bot = new DM.DiscordMusic(client);
+```
+
+Simple settings and setup
 ```
 bot.setup({
     token_key: '', // Individual App Bot User Token
