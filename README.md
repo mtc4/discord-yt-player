@@ -19,7 +19,7 @@ npm install request
 
 A step by step series of examples that tell you have to get a development env running
 
-Download discord-yt-player.js
+Download discord-yt-player.js and declare it
 
 ```
 const DM = require('discord-yt-player')
