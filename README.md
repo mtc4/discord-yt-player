@@ -25,7 +25,7 @@ Download discord-yt-player.js and declare it
 const DM = require('discord-yt-player')
 ```
 
-### Setup
+### Setup & Options
 
 First of all you need to create a Discord client object e.g.
 
@@ -69,6 +69,16 @@ and simply run it
 node YOUR_APP.js <TOKEN> <SERVER_ID> <VOICE_CHANNEL_ID> <TEXT_CHANNEL_ID> <YOUTUBE_API_KEY>
 ```
 
+
+__Available commands list: (default names)__  
+* `songrequest [youtube-url]`: Adds new YouTube song to the queue
+* `skip`: Skips a song <TODO>
+* `queue`: Displays all songs in queue <TODO>
+* `stop`: Stops music playback. <TODO>
+* `start`: Resumes music playback. <TODO>
+* `clear`: Clears queue. <TODO>
+
+
 ## Running the tests
 Force add songs to the queue
 ```
@@ -85,6 +95,9 @@ setTimeout(function() {
   }
   
 }, 3000);
+```
+
+
 ```
 
 ## Built With
