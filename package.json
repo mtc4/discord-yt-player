@@ -1,0 +1,26 @@
+{
+  "name": "discord-yt-player",
+  "version": "1.1.0",
+  "description": "Fully Automated Music Bot for the Discord Servers Edit",
+  "main": "discord-yt-player.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtthev/discord-yt-player.git"
+  },
+  "keywords": [
+    "discord",
+    "music-bot",
+    "bot",
+    "youtube-player",
+    "songrequest"
+  ],
+  "author": "Mateusz Czernal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mtthev/discord-yt-player/issues"
+  },
+  "homepage": "https://github.com/mtthev/discord-yt-player#readme"
+}
