@@ -74,11 +74,11 @@ node YOUR_APP.js <TOKEN> <SERVER_ID> <VOICE_CHANNEL_ID> <TEXT_CHANNEL_ID> <YOUTU
 
 __Available commands list: (default names)__  
 * `songrequest [youtube-url]`: Adds new YouTube song to the queue
-* `skip`: Skips a song <TODO>
-* `queue`: Displays all songs in queue <TODO>
-* `stop`: Stops music playback. <TODO>
-* `start`: Resumes music playback. <TODO>
-* `clear`: Clears queue. <TODO>
+* `skip`: Skips a song //TO-DO List
+* `queue`: Displays all songs in queue //TO-DO List
+* `stop`: Stops music playback. //TO-DO List
+* `start`: Resumes music playback. //TO-DO List
+* `clear`: Clears queue. //TO-DO List
 
 ![alt text](https://i.imgur.com/Xr0tR7p.png)
 
