@@ -1,6 +1,8 @@
 # discord-yt-player
 Fully Automated Music Bot for the Discord Servers
 
+![alt text](https://i.imgur.com/SSERZ4M.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
@@ -78,6 +80,7 @@ __Available commands list: (default names)__
 * `start`: Resumes music playback. <TODO>
 * `clear`: Clears queue. <TODO>
 
+![alt text](https://i.imgur.com/Xr0tR7p.png)
 
 ## Running the tests
 Force add songs to the queue
