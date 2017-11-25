@@ -225,7 +225,7 @@ exports.DiscordMusic = class {
         var video = this.videoType(element);
 
         if (video.type === "playlist") {
-            this.addPlaylist(video.id, author);
+            this.addPlaylist(video.id, author, video.pageToken);
             return;
         }
 
@@ -252,10 +252,11 @@ exports.DiscordMusic = class {
         return this._globalQueue;
     }
 
-    addPlaylist(id, pageToken = '') {
+    addPlaylist(id, author, pageToken = '') {
         request("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=" + id + "&key=" + this.apiKey + "&pageToken=" + pageToken, (error, response, body) => {
             var json = JSON.parse(body);
-            this.total = json != null ? json.pageInfo.totalResults : 0;
+            console.log("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=" + id + "&key=" + this.apiKey + "&pageToken=" + pageToken);
+            this.total = json != null ? (json.pageInfo != null ? json.pageInfo.totalResults : 0)  : 0;
 
             if ("error" in json) {
                 console.log(json.error.errors[0]);
@@ -264,7 +265,7 @@ exports.DiscordMusic = class {
             } else {
 
                 json.items.forEach((v) => {
-                    this.addSong(v.snippet.resourceId.videoId).then(function(result) {
+                    this.addSong(v.snippet.resourceId.videoId, author).then(function(result) {
                         console.log(result + "");
                     }, function(err) {
                         console.log(err);
@@ -275,7 +276,7 @@ exports.DiscordMusic = class {
                 if (json.nextPageToken == null) {
                     return;
                 }
-                this.addPlaylist(id, json.nextPageToken)
+                this.addPlaylist(id, author, json.nextPageToken)
             }
         });
 
@@ -385,15 +386,14 @@ exports.DiscordMusic = class {
         var data;
 
         ytdl.getInfo("https://www.youtu.be/watch?v=" + this.videoType(video).id).then(info => {
-            console.log(info);
             if (error || info == null) return({ status: 'error', data: `Error occured - ${this.errors}`});
 
             data = ({
                 title: info["title"],
+                nextPageToken: info["nextPageToken"],
                 id: 0
             });
         });
-        console.log(data);
         return({ status: 'success', data: data });                    
     }
 
